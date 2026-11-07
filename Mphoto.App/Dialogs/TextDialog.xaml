@@ -1,0 +1,88 @@
+<Window x:Class="Mphoto.Dialogs.TextDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Texto" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" ShowInTaskbar="False" SizeToContent="WidthAndHeight"
+        FontFamily="Segoe UI" SnapsToDevicePixels="True">
+    <Border Style="{StaticResource DialogRoot}" Width="480" Margin="16">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border x:Name="HeaderArea" Grid.Row="0" Padding="20,15,12,10" Background="Transparent">
+                <DockPanel>
+                    <Button x:Name="CloseButton" DockPanel.Dock="Right" Style="{StaticResource PanelButton}"
+                            Content="&#xE711;" FontFamily="Segoe MDL2 Assets" FontSize="11" />
+                    <TextBlock Text="Insertar texto" Style="{StaticResource DialogTitle}" />
+                </DockPanel>
+            </Border>
+
+            <StackPanel Grid.Row="1" Margin="20,2,20,6">
+                <TextBox x:Name="InputBox" Height="96" AcceptsReturn="True" TextWrapping="Wrap"
+                         VerticalContentAlignment="Top" FontSize="13"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto" />
+
+                <Grid Margin="0,14,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Fuente" Style="{StaticResource MiniLabel}" Margin="0,0,0,6" />
+                        <ComboBox x:Name="FontBox" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Tamaño" Style="{StaticResource MiniLabel}" Margin="0,0,0,6" />
+                        <TextBox x:Name="SizeBox" Text="48" Height="27" MaxLength="3" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="4" VerticalAlignment="Bottom" Orientation="Horizontal">
+                        <ToggleButton x:Name="BoldToggle" Style="{StaticResource IconToggle}" Width="28" Height="27"
+                                      Content="B" FontWeight="Bold" ToolTip="Negrita" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="5" VerticalAlignment="Bottom" Orientation="Horizontal">
+                        <ToggleButton x:Name="ItalicToggle" Style="{StaticResource IconToggle}" Width="28" Height="27"
+                                      Content="I" FontStyle="Italic" Margin="4,0,0,0" ToolTip="Cursiva" />
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                    <TextBlock Text="Color" Style="{StaticResource MiniLabel}" Margin="0,0,10,0" />
+                    <Button x:Name="ColorButton" Width="46" Height="22" Cursor="Hand" Click="Color_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="Bd" Background="{TemplateBinding Background}" CornerRadius="4"
+                                        BorderBrush="#55FFFFFF" BorderThickness="1" />
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Bd" Property="BorderBrush" Value="White" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBlock x:Name="ColorText" Style="{StaticResource MiniLabel}" Margin="10,0,0,0" />
+                </StackPanel>
+
+                <TextBlock x:Name="ErrorText" Foreground="{StaticResource DangerBrush}" FontSize="11.5"
+                           Margin="0,12,0,0" Visibility="Collapsed" TextWrapping="Wrap" />
+            </StackPanel>
+
+            <Border Grid.Row="2" Padding="20,10,20,18">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Cancelar" Style="{StaticResource GhostButton}" Margin="0,0,8,0" Click="Cancel_Click" />
+                    <Button Content="Insertar" Style="{StaticResource PrimaryButton}" IsDefault="True" Click="Ok_Click" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

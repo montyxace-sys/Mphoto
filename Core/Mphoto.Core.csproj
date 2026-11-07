@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Mphoto.Core</RootNamespace>
+    <AssemblyName>Mphoto.Core</AssemblyName>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" Version="2.88.8" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Win32" Version="2.88.8" />
+  </ItemGroup>
+
+</Project>

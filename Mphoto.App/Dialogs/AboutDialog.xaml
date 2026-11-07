@@ -1,0 +1,72 @@
+<Window x:Class="Mphoto.Dialogs.AboutDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Acerca de Mphoto" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" ShowInTaskbar="False" SizeToContent="WidthAndHeight"
+        FontFamily="Segoe UI" SnapsToDevicePixels="True">
+    <Border Style="{StaticResource DialogRoot}" Width="470" Margin="16">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border x:Name="HeaderArea" Grid.Row="0" Padding="20,15,12,10" Background="Transparent">
+                <DockPanel>
+                    <Button x:Name="CloseButton" DockPanel.Dock="Right" Style="{StaticResource PanelButton}"
+                            Content="&#xE711;" FontFamily="Segoe MDL2 Assets" FontSize="11" />
+                    <TextBlock Text="Acerca de Mphoto" Style="{StaticResource DialogTitle}" />
+                </DockPanel>
+            </Border>
+
+            <StackPanel Grid.Row="1" Margin="20,2,20,6">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Assets/icon-mark.png" Width="64" Height="64" RenderOptions.BitmapScalingMode="HighQuality" />
+                    <StackPanel Margin="14,4,0,0">
+                        <TextBlock Text="Mphoto" FontSize="24" FontWeight="Bold" />
+                        <TextBlock x:Name="VersionText" Style="{StaticResource MiniLabel}" Margin="0,2,0,0" />
+                        <TextBlock Text="Editor de imágenes libre y gratuito" Style="{StaticResource MiniLabel}" Margin="0,2,0,0" />
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextMutedBrush}" FontSize="12.5"
+                           LineHeight="19" Margin="0,16,0,0"
+                           Text="Mphoto ofrece capas con modos de fusión, pinceles, selecciones, ajustes de color, filtros, recorte, rotación y exportación a PNG, JPEG, WebP y BMP. Sin suscripciones, sin anuncios y sin límites." />
+
+                <Border Background="{StaticResource PanelAltBrush}" CornerRadius="7" Padding="12,10" Margin="0,16,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Software libre · Licencia MIT" FontWeight="SemiBold" FontSize="12" />
+                        <TextBlock Text="© 2026 MSoft · Creado con WPF, .NET 8 y SkiaSharp"
+                                   Style="{StaticResource MiniLabel}" Margin="0,3,0,0" />
+                    </StackPanel>
+                </Border>
+
+                <TextBlock Text="ATAJOS PRINCIPALES" Style="{StaticResource SectionHeader}" Margin="0,18,0,8" />
+                <UniformGrid Columns="2">
+                    <TextBlock Text="Pincel · B" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Borrador · E" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Relleno · G" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Texto · T" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Forma · U" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Selección · M" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Lazo · L" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Recorte · C" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Cuentagotas · S" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Mano · H" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Deshacer · Ctrl+Z" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Rehacer · Ctrl+Y" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Ajustar a pantalla · Ctrl+0" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Tamaño real · Ctrl+1" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Seleccionar todo · Ctrl+A" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                    <TextBlock Text="Deseleccionar · Ctrl+D" Style="{StaticResource MiniLabel}" Margin="0,2" />
+                </UniformGrid>
+            </StackPanel>
+
+            <Border Grid.Row="2" Padding="20,12,20,18">
+                <Button Content="Cerrar" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Right"
+                        Click="Close_Click" IsDefault="True" IsCancel="True" />
+            </Border>
+        </Grid>
+    </Border>
+</Window>

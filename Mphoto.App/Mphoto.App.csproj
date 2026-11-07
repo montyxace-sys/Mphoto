@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Mphoto</RootNamespace>
+    <AssemblyName>Mphoto</AssemblyName>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Authors>MSoft</Authors>
+    <Product>Mphoto</Product>
+    <Description>Editor de imágenes libre y gratuito</Description>
+    <Copyright>© 2026 MSoft</Copyright>
+    <AssemblyTitle>Mphoto</AssemblyTitle>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Mphoto.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\icon.ico" />
+    <Resource Include="Assets\icon.png" />
+    <Resource Include="Assets\icon-mark.png" />
+  </ItemGroup>
+
+</Project>
