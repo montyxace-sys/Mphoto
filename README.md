@@ -30,7 +30,10 @@ Editor de imágenes con aspecto de Adobe Photoshop, 100 % gratuito y open source
 
 ## Descargar
 
-Puedes compilarlo tú mismo o descargar la versión lista para usar desde la sección de releases del repositorio.
+- **MphotoSetup.exe**: instalador para todos los usuarios de Windows 10/11 de 64 bits (68 MB). Crea accesos directos, entrada en Aplicaciones instaladas y un desinstalador.
+- **Mphoto.exe**: versión portable, sin instalación (165 MB). No necesita .NET: es un único ejecutable autocontenido.
+
+Ambos están en la sección de releases del repositorio.
 
 ## Compilar
 
@@ -44,6 +47,12 @@ Para generar un único ejecutable autocontenido (no necesita .NET instalado):
 
 ```
 dotnet publish Mphoto.App -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o publish
+```
+
+Para generar el instalador (crea `publish\MphotoSetup.exe`):
+
+```
+powershell -File build-setup.ps1
 ```
 
 ## Pruebas
