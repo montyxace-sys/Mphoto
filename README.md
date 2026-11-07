@@ -1,6 +1,6 @@
 # Mphoto
 
-Editor de imágenes libre y gratuito para Windows, con una interfaz moderna inspirada en los grandes editores (Photoshop/GIMP) y motor de renderizado [SkiaSharp](https://github.com/mono/SkiaSharp).
+Editor de imágenes con aspecto de Adobe Photoshop, 100 % gratuito y open source. Funciona en Windows, con una interfaz moderna inspirada en los grandes editores y motor de renderizado [SkiaSharp](https://github.com/mono/SkiaSharp).
 
 ## Funciones
 
@@ -54,4 +54,4 @@ dotnet run --project tests/Mphoto.CoreTests -c Release
 
 ## Licencia
 
-MIT © 2026 MSoft
+Apache License 2.0 © 2026 MSoft. Consulta [LICENSE](LICENSE) para el texto completo.
