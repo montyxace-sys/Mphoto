@@ -8,3 +8,4 @@ publish/
 
 # Material de desarrollo (capturas y herramientas internas)
 tools/
+dist/
